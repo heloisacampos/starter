@@ -1,0 +1,96 @@
+/*=================================
+=            Variables            =
+=================================*/
+$assets-path: '../../assets/';
+
+$timer-standard:   .4s;
+$timer-very-rapid: $timer-standard * 0.25;
+$timer-rapid:      $timer-standard * 0.5;
+$timer-slow:       $timer-standard * 1.5;
+$timer-very-slow:  $timer-standard * 2;
+
+$color-theme: #A8385C;
+$color-light: white;
+/*=====  End of Variables  ======*/
+
+
+/*=============================
+=            Fonts            =
+=============================*/
+@font-face {
+    font-family: 'TitilliumRegular';
+    src: local('TitilliumRegular'), url(#{$assets-path}fonts/TitilliumRegular/TitilliumRegular.eot);
+    src: local('TitilliumRegular'), url(#{$assets-path}fonts/TitilliumRegular/TitilliumRegular.eot) format('embedded-opentype'),
+         local('TitilliumRegular'), url(#{$assets-path}fonts/TitilliumRegular/TitilliumRegular.woff2) format('woff2'),
+         local('TitilliumRegular'), url(#{$assets-path}fonts/TitilliumRegular/TitilliumRegular.woff) format('woff'),
+         local('TitilliumRegular'), url(#{$assets-path}fonts/TitilliumRegular/TitilliumRegular.ttf) format('truetype'),
+         local('TitilliumRegular'), url(#{$assets-path}fonts/TitilliumRegular/TitilliumRegular.svg#TitilliumRegular) format('svg');
+}
+@font-face {
+    font-family: 'LatoRegular';
+    src: local('LatoRegular'), url(#{$assets-path}fonts/LatoRegular/LatoRegular.eot);
+    src: local('LatoRegular'), url(#{$assets-path}fonts/LatoRegular/LatoRegular.eot) format('embedded-opentype'),
+         local('LatoRegular'), url(#{$assets-path}fonts/LatoRegular/LatoRegular.woff2) format('woff2'),
+         local('LatoRegular'), url(#{$assets-path}fonts/LatoRegular/LatoRegular.woff) format('woff'),
+         local('LatoRegular'), url(#{$assets-path}fonts/LatoRegular/LatoRegular.ttf) format('truetype'),
+         local('LatoRegular'), url(#{$assets-path}fonts/LatoRegular/LatoRegular.svg#LatoRegular) format('svg');
+}
+/*=====  End of Fonts  ======*/
+
+
+/*==============================
+=            Mixins            =
+==============================*/
+@mixin titillium($attr: 1em) {
+    font: $attr 'TitilliumRegular' !important;
+}
+
+@mixin lato($attr: 1em) {
+    font: $attr 'LatoRegular' !important;
+}
+/*=====  End of Mixins  ======*/
+
+
+/*===============================
+=            Extends            =
+===============================*/
+.box-theme {
+	padding: 15px;
+	border: 1px solid darken($color-light, 20%) !important;
+	border-radius: 4px;
+}
+
+.reset-button {
+	background: transparent;
+	padding: 0;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.title {
+	@include titillium(2.225em);
+	color: $color-theme;
+}
+
+.subtitle {
+	@include titillium(1.25em);
+	color: $color-theme;
+}
+/*=====  End of Extends  ======*/
+
+
+
+/*===============================
+=            Imports            =
+===============================*/
+@import
+'compass/reset',
+'compass/css3',
+'../app/modules/typography',
+'../app/modules/preview',
+'../app/modules/video-button',
+'../app/layouts/base',
+'../app/layouts/partials/featured',
+'../app/layouts/partials/videos';
+/*=====  End of Imports  ======*/
