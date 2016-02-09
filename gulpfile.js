@@ -26,7 +26,7 @@ var dev  = './dev/',
 
     gulpFile       = 'gulpfile.js',
     htmlFiles      = dev + '**/*.html',
-    jsFiles        = dev + 'js/**/*.js',
+    jsFiles        = dev + 'scritps/**/*.js',
     scssFiles      = dev + 'styles/scss/**/*.scss',
     renderersFiles = dev + 'styles/scss/renderers/**/*.scss',
     cssFiles       = dev + 'styles/css/**/*.css',
@@ -52,7 +52,7 @@ gulp.task('watch', function () {
 
     gulp.watch(gulpFile,  ['notification']);
     gulp.watch(scssFiles, ['compass']);
-    gulp.watch(jsFiles,   ['jshint']);
+    gulp.watch(jsFiles,   ['qualitiy']);
 
     gulp.watch(htmlFiles).on('change', browserSync.reload);
     gulp.watch(jsFiles).on('change', browserSync.reload);
@@ -101,7 +101,7 @@ gulp.task('compass', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('jshint', function () {
+gulp.task('qualitiy', function () {
     return gulp.src(jsFiles)
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
@@ -147,7 +147,7 @@ gulp.task('minify', function () {
         .pipe(minifyCss())
         .pipe(gulp.dest(dist + 'style'));
 
-    gulp.src(dist + 'js/main.js')
+    gulp.src(dist + 'scripts/main.js')
         .pipe(uglify())
         .pipe(gulp.dest(dist + 'js'));
 });

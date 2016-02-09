@@ -1,5 +1,5 @@
 # Ignored folders
-bower_modules/
+bower_components/
 layout/
 node_modules/
 .sass-cache/
