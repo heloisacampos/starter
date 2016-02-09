@@ -1,11 +1,10 @@
-# starter
+###Starter
 This is my beginning pattern design
 
-#Usage
-Use
+###Usage
 ```bash
 $ npm install
 ```
 
-# Contributor
-* Paulo Campos <[paulovitowd@gmail.com](mailto:paulovitowd@gmail.com)>
+###Contributor
+Paulo Campos <[paulovitowd@gmail.com](mailto:paulovitowd@gmail.com)>
